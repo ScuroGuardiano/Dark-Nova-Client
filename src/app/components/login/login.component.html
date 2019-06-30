@@ -1,0 +1,25 @@
+<main>
+  <div class="info">
+    <h2>Dark Nova</h2>
+    <p>Dark Nova to darmowa gra strategiczna czasu rzeczywistego. Graj teraz w przeglądarce!</p>
+    <p>Zniszcz wrogów w epickich bitwach i zostań władcą galaktyki, nie czekaj!</p>
+    <a routerLink="/presentation">Prezentacja</a>
+  </div>
+  <div class="form-wrapper">
+    <button [ngClass]="{'choosen': mode === 'login'}" (click)="mode='login'">Login</button>
+    <button [ngClass]="{'choosen': mode === 'register'}" (click)="mode='register'">Register</button>
+    <form *ngIf="mode==='login'">
+      <h3>Zaloguj się!</h3>
+      <input type="email" [(ngModel)]="email" name="email" placeholder="email" required>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="password" required>
+      <input type="submit" (click)="login()" value="Zaloguj się!">
+    </form>
+    <form *ngIf="mode==='register'">
+      <h3>Zarejestruj się!</h3>
+      <input type="email" [(ngModel)]="email" name="email" placeholder="email" required>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="password" required>
+      <input type="password" placeholder="confirm password" required>
+      <input type="submit" (click)="register()" value="Rejestracja!">
+    </form>
+  </div>
+</main>
