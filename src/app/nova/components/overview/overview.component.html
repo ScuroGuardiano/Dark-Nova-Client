@@ -1,0 +1,29 @@
+<main class="view">
+  <p class="window-title">Planet &quot;{{planetName}}&quot; ({{playerName}})</p>
+  <table>
+    <tr>
+      <td>Server time</td>
+      <td colspan="2">{{serverTime}}</td>
+    </tr>
+    <tr>
+      <td colspan="3"><img src="/assets/images/planets/eisplanet06.jpg" /></td>
+    </tr>
+    <tr>
+      <td>Diameter</td>
+      <td>{{diameter}}km</td>
+      <td>{{fields.used}} / {{fields.max}} fields</td>
+    </tr>
+    <tr>
+      <td>Temperature</td>
+      <td colspan="2">From {{temperature.min}}&deg;C to {{temperature.max}}&deg;C</td>
+    </tr>
+    <tr>
+      <td>Position</td>
+      <td colspan="2">[{{coords.galaxy}}:{{coords.system}}:{{coords.position}}]</td>
+    </tr>
+    <tr>
+      <td>Points</td>
+      <td colspan="2">[TODO]</td>
+    </tr>
+  </table>
+</main>

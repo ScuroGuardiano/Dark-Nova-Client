@@ -22,6 +22,17 @@ export class LoginComponent implements OnInit {
         }
       });
   }
+  register() {
+    this.loginService.register(this.email, this.password)
+      .subscribe(result => {
+        if(result) {
+          alert("Register successful!");
+        }
+        else {
+          alert("Register failed!");
+        }
+      });
+  }
   ngOnInit() {
   }
 }

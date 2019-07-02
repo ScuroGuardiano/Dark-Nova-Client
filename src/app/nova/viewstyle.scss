@@ -1,0 +1,78 @@
+main.view {
+  margin-top: 10px;
+  float: left;
+  position: relative;
+  left: calc(50% - 182px);
+  transform: translateX(-50%);
+}
+
+.cb {
+  clear: both;
+}
+
+input[type="text"] {
+  background-color: rgb(38, 49, 69);
+  border: solid rgb(70, 80, 119) 2px;
+  padding: 2px;
+  color: #eee;
+  margin-top: 5px;
+}
+
+input[type="submit"],
+button,
+.button-link {
+  text-decoration: none;
+  background-color: rgb(38, 49, 69);
+  border: solid rgb(70, 80, 119) 2px;
+  padding: 2px 12px;
+  color: #eee;
+  margin-top: 5px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.button-link:hover {
+  background-color: rgb(55, 63, 94);
+}
+
+.small-window {
+  width: 400px;
+  border: solid black 2px;
+  background-color: rgb(53, 69, 102);
+  padding: 5px;
+}
+
+.window-title {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2px;
+  background-color: rgb(38, 49, 69);
+  border: solid rgb(70, 80, 119) 2px;
+  font-weight: bold;
+}
+
+.window-content {
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: solid rgb(70, 80, 119) 2px;
+  padding: 5px;
+}
+
+.window-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}

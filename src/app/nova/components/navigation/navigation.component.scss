@@ -1,0 +1,29 @@
+nav {
+    background-color: rgb(53, 69, 102);
+    border: solid rgb(70, 80, 119) 2px;
+    width: 180px;
+    float: left;
+    .nav-title {
+        background-color: rgb(38, 49, 69);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(151, 169, 248);
+        font-weight: bold;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        li {
+            margin-top: 2px;
+        }
+        li:last-child {
+            margin-bottom: 2px;
+        }
+    }
+}

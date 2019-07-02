@@ -1,0 +1,13 @@
+.view {
+    width: 480px;
+    table {
+        border: solid rgb(70, 80, 119) 2px;
+        border-top: none;
+    }
+    td {
+        background-color: rgb(53, 69, 102);
+        width: 160px;
+        padding: 5px;
+        text-align: center;
+    }
+}

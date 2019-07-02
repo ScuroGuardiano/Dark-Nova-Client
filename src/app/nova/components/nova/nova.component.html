@@ -1,0 +1,46 @@
+<main>
+  <header>
+    <span class="player-name">Player: <b>{{nickname}}</b></span>
+  </header>
+  <div id="resources-bar-wrapper">
+    <div id="resources-bar">
+      <div class="resource metal">
+        <img src="/assets/images/icons/metal.gif" />
+        <span class="resource-name"><b><i>Metal</i></b></span>
+        <span class="resource-amount">{{metal}}</span>
+        <span class="resource-production">{{metalPerHour}}/h</span>
+        <span class="resource-storage">{{metalStorage}}</span>
+      </div>
+      <div class="resource crystal">
+        <img src="/assets/images/icons/crystal.gif" />
+        <span class="resource-name"><b><i>Crystal</i></b></span>
+        <span class="resource-amount">{{crystal}}</span>
+        <span class="resource-production">{{crystalPerHour}}/h</span>
+        <span class="resource-storage">{{crystalStorage}}</span>
+      </div>
+      <div class="resource deuter">
+        <img src="/assets/images/icons/deuter.gif" />
+        <span class="resource-name"><b><i>Deuterium</i></b></span>
+        <span class="resource-amount">{{deuterium}}</span>
+        <span class="resource-production">{{deuteriumPerHour}}/h</span>
+        <span class="resource-storage">{{deuteriumStorage}}</span>
+      </div>
+      <div class="resource energy">
+        <img src="/assets/images/icons/energy.gif" />
+        <span class="resource-name"><b><i>Energy</i></b></span>
+        <span class="resource-amount">{{availableEnergy}}</span>
+      </div>
+      <div class="resource dark-matter">
+        <img src="/assets/images/icons/dark-matter.jpg" />
+        <span class="resource-name"><b><i>Dark Matter</i></b></span>
+        <span class="resource-amout">{{darkMatter}}</span>
+      </div>
+      <div class="cb"></div>
+    </div>
+  </div>
+  <app-nova-navigation></app-nova-navigation>
+
+  <router-outlet></router-outlet>
+
+  <footer>Dark Nova v 0.1 Copyright &copy; 2019 Scuro Guardiano</footer>
+</main>
