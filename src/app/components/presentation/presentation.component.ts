@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NovaApiService } from '../../services/nova-api.service';
 
 @Component({
   selector: 'app-presentation',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private novaApi: NovaApiService) { }
   randomArray = [];
 
   ngOnInit() {
+    this.novaApi.get('/login');
     for(let i = 0; i < 70; i++) {
       this.randomArray.push(0);
     }

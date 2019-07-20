@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './components/login/login.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NovaApiService } from './services/nova-api.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,13 @@ import { PresentationComponent } from './components/presentation/presentation.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    NovaApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
