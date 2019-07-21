@@ -11,27 +11,11 @@ export class LoginComponent implements OnInit {
   public email = "";
   public password = "";
   constructor(private loginService: LoginService) { }
-  login() {
-    this.loginService.login(this.email, this.password)
-      .subscribe(result => {
-        if (result) {
-          alert("Login successful!");
-        }
-        else {
-          alert("Login failed!");
-        }
-      });
+  async login() {
+
   }
-  register() {
-    this.loginService.register(this.email, this.password)
-      .subscribe(result => {
-        if(result) {
-          alert("Register successful!");
-        }
-        else {
-          alert("Register failed!");
-        }
-      });
+  async register() {
+
   }
   ngOnInit() {
   }

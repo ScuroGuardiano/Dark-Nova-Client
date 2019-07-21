@@ -97,12 +97,18 @@ export class NovaApiService {
    * Sends DELETE request to nova Api
    * @param path relative path to API_ENDPOINT
    */
-  public async delete(path: string): Promise<NovaApiResponse> {
+  public async delete(path: string, body?: any): Promise<NovaApiResponse> {
     try {
       const headers = this.createHeaders();
-      const response = await this.http.delete<NovaApiResponse>(
+      headers.append("Content-Type", "application/json");
+      const response = await this.http.request<NovaApiResponse>(
+        "DELETE",
         this.API_ENDPOINT + path,
-        { headers, observe: "response" }
+        {
+          headers,
+          observe: "response",
+          body: body || null
+        }
       ).toPromise();
       return this.formatResponse(response);
     }
