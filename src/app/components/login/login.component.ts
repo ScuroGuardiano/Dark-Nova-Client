@@ -12,7 +12,11 @@ export class LoginComponent implements OnInit {
   public password = "";
   constructor(private loginService: LoginService) { }
   async login() {
-
+    if(!this.email || !this.password) {
+      alert("You need to fill email and password fields!");
+    }
+    const res = await this.loginService.login(this.email, this.password);
+    alert(res);
   }
   async register() {
 

@@ -123,6 +123,16 @@ export class NovaApiService {
     }
   }
 
+  public async destroySession(): Promise<void> {
+    try {
+      await this.delete('/auth/destroy-session', { token: this.apiToken });
+      this.apiToken = null;
+    }
+    catch(err) {
+      console.error(err);
+    }
+  }
+
   private createHeaders(): HttpHeaders {
     const headers = new HttpHeaders();
     if (this.apiToken) {

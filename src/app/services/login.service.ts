@@ -16,10 +16,11 @@ export class LoginService {
    */
   public async login(email: string, password: string): Promise<string> {
     try {
-      const res = await this.api.post('/login', {
+      const res = await this.api.post('/auth/login', {
         email,
         password
       });
+
       if(res.token) {
         this.api.setApiToken(res.token);
         return "OK";
