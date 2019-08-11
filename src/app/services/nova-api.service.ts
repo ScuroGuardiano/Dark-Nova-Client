@@ -14,6 +14,10 @@ export class NovaApiService {
   public setApiToken(token: string) {
     this.apiToken = token;
   }
+  public isLoggedIn(): boolean {
+    // If api token is set it means user is logged in. Of course session may be incorrect, but client doesn't know this LOL
+    return !!this.apiToken;
+  }
 
   /**
    * Sends GET request to nova api
