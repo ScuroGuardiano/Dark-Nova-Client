@@ -9,7 +9,8 @@ export class NovaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    // TODO: Ładowanie danych z /game/basic-data
   }
   public get nickname() {
     return "ScuroGuardiano";

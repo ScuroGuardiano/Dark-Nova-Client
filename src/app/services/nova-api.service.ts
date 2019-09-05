@@ -103,8 +103,8 @@ export class NovaApiService {
    */
   public async delete(path: string, body?: any): Promise<NovaApiResponse> {
     try {
-      const headers = this.createHeaders();
-      headers.append("Content-Type", "application/json");
+      let headers = this.createHeaders();
+      headers = headers.set("Content-Type", "application/json");
       const response = await this.http.request<NovaApiResponse>(
         "DELETE",
         this.API_ENDPOINT + path,
@@ -138,9 +138,9 @@ export class NovaApiService {
   }
 
   private createHeaders(): HttpHeaders {
-    const headers = new HttpHeaders();
+    let headers = new HttpHeaders();
     if (this.apiToken) {
-      headers.append("X-Nova-Token", this.apiToken);
+      headers = headers.set("X-Nova-Token", this.apiToken);
     }
     return headers;
   }
