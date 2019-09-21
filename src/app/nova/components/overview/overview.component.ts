@@ -26,7 +26,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.player = res.player;
     }
     catch(err) {
-      alert("Zjebało sie, zobacz logi XDDD");
+      // TODO: Better error handling
+      alert(".::OVERVIEW::. Zjebało sie, zobacz logi XDDD");
       console.error(err);
     }
   }
@@ -40,33 +41,4 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private stopTimeUpdater() {
     this.timeUpdaterSubscription.unsubscribe();
   }
-  public get diameter() {
-    return "12.800";
-  }
-  public get fields() {
-    return {
-      used: 54,
-      max: 163
-    };
-  }
-  public get planetName() {
-    return "Atlantis";
-  }
-  public get playerName() {
-    return "ScuroGuardiano";
-  }
-  public get temperature() {
-    return {
-      min: -40,
-      max: 120
-    };
-  }
-  public get coords() {
-    return {
-      galaxy: 4,
-      system: 133,
-      position: 7
-    };
-  }
-
 }

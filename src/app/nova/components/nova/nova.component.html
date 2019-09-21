@@ -1,39 +1,39 @@
 <main>
   <header>
-    <span class="player-name">Player: <b>{{nickname}}</b></span>
+    <span class="player-name">Player: <b>{{ player.nickname }}</b></span>
   </header>
   <div id="resources-bar-wrapper">
     <div id="resources-bar">
       <div class="resource metal">
         <img src="/assets/images/icons/metal.gif" />
         <span class="resource-name"><b><i>Metal</i></b></span>
-        <span class="resource-amount">{{metal}}</span>
-        <span class="resource-production">{{metalPerHour}}/h</span>
-        <span class="resource-storage">{{metalStorage}}</span>
+        <span class="resource-amount">{{ planet.metal }}</span>
+        <span class="resource-production">{{ planet.metalPerHour }}/h</span>
+        <span class="resource-storage">{{ planet.metalStorage }}</span>
       </div>
       <div class="resource crystal">
         <img src="/assets/images/icons/crystal.gif" />
         <span class="resource-name"><b><i>Crystal</i></b></span>
-        <span class="resource-amount">{{crystal}}</span>
-        <span class="resource-production">{{crystalPerHour}}/h</span>
-        <span class="resource-storage">{{crystalStorage}}</span>
+        <span class="resource-amount">{{ planet.crystal }}</span>
+        <span class="resource-production">{{ planet.crystalPerHour }}/h</span>
+        <span class="resource-storage">{{ planet.crystalStorage }}</span>
       </div>
       <div class="resource deuter">
         <img src="/assets/images/icons/deuter.gif" />
         <span class="resource-name"><b><i>Deuterium</i></b></span>
-        <span class="resource-amount">{{deuterium}}</span>
-        <span class="resource-production">{{deuteriumPerHour}}/h</span>
-        <span class="resource-storage">{{deuteriumStorage}}</span>
+        <span class="resource-amount">{{ planet.deuterium }}</span>
+        <span class="resource-production">{{ planet.deuteriumPerHour }}/h</span>
+        <span class="resource-storage">{{ planet.deuteriumStorage }}</span>
       </div>
       <div class="resource energy">
         <img src="/assets/images/icons/energy.gif" />
         <span class="resource-name"><b><i>Energy</i></b></span>
-        <span class="resource-amount">{{availableEnergy}}</span>
+        <span class="resource-amount">{{ planet.energy - planet.energyUsage }}</span>
       </div>
       <div class="resource dark-matter">
         <img src="/assets/images/icons/dark-matter.jpg" />
         <span class="resource-name"><b><i>Dark Matter</i></b></span>
-        <span class="resource-amout">{{darkMatter}}</span>
+        <span class="resource-amout">{{ darkMatter }}</span>
       </div>
       <div class="cb"></div>
     </div>

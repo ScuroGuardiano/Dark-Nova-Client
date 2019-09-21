@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NovaService } from '../../services/nova.service';
+import NovaApiResponse from '../../../interfaces/nova-api-response';
+import IPlayer from '../../interfaces/player';
+import IPlanet from '../../interfaces/planet';
 
 @Component({
   selector: 'app-nova',
@@ -7,45 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private novaService: NovaService) { }
+
+  public player: Partial<IPlayer>;
+  public planet: Partial<IPlanet>;
 
   async ngOnInit() {
-    // TODO: Ładowanie danych z /game/basic-data
-  }
-  public get nickname() {
-    return "ScuroGuardiano";
-  }
-  public get metal() {
-    return "1.000";
-  }
-  public get metalPerHour() {
-    return "2.500";
-  }
-  public get metalStorage() {
-    return "20.000";
-  }
-  public get crystal() {
-    return "1.500";
-  }
-  public get crystalPerHour() {
-    return "2.500";
-  }
-  public get crystalStorage() {
-    return "20.000";
-  }
-  public get deuterium() {
-    return "750";
-  }
-  public get deuteriumPerHour() {
-    return "2.500";
-  }
-  public get deuteriumStorage() {
-    return "20.000";
-  }
-  public get availableEnergy() {
-    return "342";
+    try {
+      const data = await this.novaService.get('/game/basic-data') as NovaApiResponse;
+      this.player = data.player;
+      this.planet = data.planet;
+    }
+    catch(err) {
+      // TODO: Better error handling
+      alert(".::LAYOUT::. Zjebało sie, zobacz logi XDDD");
+      console.error(err);
+    }
   }
   public get darkMatter() {
-    return "0";
+    return "TODO";
   }
 }

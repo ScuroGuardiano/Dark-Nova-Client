@@ -1,5 +1,5 @@
 <main class="view">
-  <p class="window-title">Planet &quot;{{planetName}}&quot; ({{playerName}})</p>
+  <p class="window-title">Planet &quot;{{ planet.name }}&quot; ({{ player.nickname }})</p>
   <table>
     <tr>
       <td>Server time</td>
@@ -10,16 +10,16 @@
     </tr>
     <tr>
       <td>Diameter</td>
-      <td>{{diameter}}km</td>
-      <td>{{fields.used}} / {{fields.max}} fields</td>
+      <td>{{ planet.diameter }}km</td>
+      <td>{{ planet.usedFields }} / {{ planet.maxFields }} fields</td>
     </tr>
     <tr>
       <td>Temperature</td>
-      <td colspan="2">From {{temperature.min}}&deg;C to {{temperature.max}}&deg;C</td>
+      <td colspan="2">From {{ planet.minTemperature }}&deg;C to {{ planet.maxTemperature }}&deg;C</td>
     </tr>
     <tr>
       <td>Position</td>
-      <td colspan="2">[{{coords.galaxy}}:{{coords.system}}:{{coords.position}}]</td>
+      <td colspan="2">[{{ planet.galaxy }}:{{ planet.system }}:{{ planet.position }}]</td>
     </tr>
     <tr>
       <td>Points</td>
