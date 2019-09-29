@@ -4,6 +4,7 @@ import IPlanet from '../../interfaces/planet';
 import IPlayer from '../../interfaces/player';
 import { NovaService } from '../../services/nova.service';
 import NovaApiResponse from '../../../interfaces/nova-api-response';
+import { promiseRetry } from '../../helpers/promise-retry';
 
 @Component({
   selector: 'app-overview',
@@ -21,18 +22,21 @@ export class OverviewComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.startTimeUpdater();
     try {
-      const res = await this.novaService.get('/game/overview') as NovaApiResponse;
-      this.planet = res.planet;
-      this.player = res.player;
+      await promiseRetry(this.loadData.bind(this), 2, 500);
     }
     catch(err) {
       // TODO: Better error handling
-      alert(".::OVERVIEW::. Zjebało sie, zobacz logi XDDD");
+      alert(".:: OVERVIEW ERROR ::.\nCouldn't load resource from remote server, try to refresh this page");
       console.error(err);
     }
   }
   ngOnDestroy() {
     this.stopTimeUpdater();
+  }
+  private async loadData() {
+    const res = await this.novaService.get('/game/overview') as NovaApiResponse;
+    this.planet = res.planet;
+    this.player = res.player;
   }
   private startTimeUpdater() {
     const i = interval(1000);

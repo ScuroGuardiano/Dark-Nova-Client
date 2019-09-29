@@ -3,6 +3,7 @@ import { NovaService } from '../../services/nova.service';
 import NovaApiResponse from '../../../interfaces/nova-api-response';
 import IPlayer from '../../interfaces/player';
 import IPlanet from '../../interfaces/planet';
+import { promiseRetry } from '../../helpers/promise-retry';
 
 @Component({
   selector: 'app-nova',
@@ -18,15 +19,17 @@ export class NovaComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const data = await this.novaService.get('/game/basic-data') as NovaApiResponse;
-      this.player = data.player;
-      this.planet = data.planet;
+      await promiseRetry(this.loadData.bind(this), 2, 500);
     }
     catch(err) {
-      // TODO: Better error handling
-      alert(".::LAYOUT::. Zjebało sie, zobacz logi XDDD");
+      alert(".:: LAYOUT ERROR ::.\nCouldn't load resource from remote server, try to refresh this page");
       console.error(err);
     }
+  }
+  private async loadData() {
+    const data = await this.novaService.get('/game/basic-data') as NovaApiResponse;
+    this.player = data.player;
+    this.planet = data.planet;
   }
   public get darkMatter() {
     return "TODO";

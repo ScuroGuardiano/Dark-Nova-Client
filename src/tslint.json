@@ -15,6 +15,7 @@
     ],
     "quotemark": false,
     "whitespace": false,
-    "one-line": false
+    "one-line": false,
+    "no-trailing-whitespace": false
   }
 }
